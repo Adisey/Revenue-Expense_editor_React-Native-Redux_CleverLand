@@ -1,20 +1,24 @@
 // Core
 import React, { Component } from 'react';
-import {
-    Footer,
-    FooterTab,
-    Button,
-    Text,
-    Icon
-} from 'native-base';
+import { Text, View } from 'react-native';
+import { string } from 'prop-types';
+import { Footer, FooterTab, Button } from 'native-base';
+// Components
+import { Icons } from '../';
 //Styles
 import styles from './styles';
 
-
 export default class AppFooter extends Component {
+    static propTypes = {
+        activePage: string.isRequired,
+    };
+
+    static defaultProps = {
+        activePage: 'SETINGS',
+    };
 
     render () {
-        const { navigate } = this.props;
+        const { navigate, activePage } = this.props;
 
         const _showCashFlow = () => {
             navigate('CashFlow');
@@ -26,33 +30,40 @@ export default class AppFooter extends Component {
             navigate('Categories');
         };
         const _showTools = () => {
-            console.log(` -> "XZ" -> `);
+            navigate('Tools');
         };
-
+        const activeText = { ...styles.textButton, ...styles.activeElement };
+        const passiveText = { ...styles.textButton, ...styles.passiveElement };
+        const activeIcon = styles.activeElement;
+        const passiveIcon = styles.passiveElement;
 
         return (
             <Footer >
                 <FooterTab style = { styles.footerTab }>
                     <Button
                         onPress = { _showCashFlow }>
-                        <Icon name = 'logo-usd' style = { styles.icon } />
-                        <Text>Операции</Text>
+                        <Icons name = { 'cashFlow' } style = { activePage==='cashFlow'? activeIcon : passiveIcon } />
+                        <Text style = { activePage==='cashFlow'? activeText : passiveText }>Операции</Text>
                     </Button>
                     <Button
                         onPress = { _showCharts }>
-                        <Icon name = 'md-analytics' style = { styles.icon } />
-                        <Text>Обзор</Text>
+                        <Icons name = { 'charts' } style = { activePage==='charts'? activeIcon : passiveIcon } />
+                        <Text style = { activePage==='charts'? activeText : passiveText }>Графики</Text>
                     </Button>
+                    <View >
+                        <Button rounded style = { styles.addButton } >
+                            <Icons name = { 'add' } style = { styles.addButtonIcon } />
+                        </Button>
+                    </View>
                     <Button
                         onPress = { _showCategory }>
-                        <Icon name = 'md-paper' style = { styles.icon } />
-                        <Text>Категории</Text>
-
+                        <Icons name = { 'categories' } style = { activePage==='categories'? activeIcon : passiveIcon } />
+                        <Text style = { activePage==='categories'? activeText : passiveText }>Категории</Text>
                     </Button>
                     <Button
                         onPress = { _showTools }>
-                        <Icon name = 'md-cog' style = { styles.icon } />
-                        <Text>Настройки</Text>
+                        <Icons name = { 'tools' } style = { activePage==='tools'? activeIcon : passiveIcon } />
+                        <Text style = { activePage==='tools'? activeText : passiveText }>Утилиты</Text>
                     </Button>
                 </FooterTab>
             </Footer>

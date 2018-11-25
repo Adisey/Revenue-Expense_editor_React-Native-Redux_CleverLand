@@ -7,11 +7,10 @@ import { AppFooter, Icons } from '../Components';
 //Styles
 import styles from './styles';
 
-
-export default class CashFlow extends Component {
+export default class Tools extends Component {
     static navigationOptions = {
-        title:            'Операции',
-        headerLeft:       <Icons name = { 'cashFlow' } style = { styles.titleIcon } />,
+        title:            'Утилиты',
+        headerLeft:       <Icons name = { 'tools' } style = { styles.titleIcon } />,
         headerTitleStyle: styles.headerTitleStyle,
         headerStyle:      styles.headerStyle,
     };
@@ -22,14 +21,14 @@ export default class CashFlow extends Component {
         return (
             <Container style = { styles.mainContainer }>
                 <View style = { styles.mainView }>
-                    <Icon name = 'ios-refresh' style = { { color: '#FF0000' } } />
-                    <Text>CashFlow</Text>
-                    <Icon name = 'plane' style = { { color: '#00FF00' } } />
+                    <Text>Пока не придумал, что сюда положить. ;)</Text>
+                    <Icon name = 'md-hand' style = { { color: '#F00' } } />
                 </View>
                 <AppFooter
-                    activePage = { 'cashFlow' }
+                    activePage = { 'tools' }
                     navigate = { navigate }
                 />
+
             </Container>
         );
     }

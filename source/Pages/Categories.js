@@ -1,20 +1,19 @@
 // Core
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { Container } from 'native-base';
 // Components
-import { AppFooter } from '../Components';
-
+import { AppFooter, Icons } from '../Components';
+//Styles
+import styles from './styles';
 
 export default class Categories extends Component {
-    // static navigationOptions = {
-    //     title:            'Categories',
-    //     headerTitleStyle: {
-    //         textAlign: 'center',
-    //         alignSelf: 'center',
-    //         flex:      1,
-    //     },
-    // };
+    static navigationOptions = {
+        title:            'Категории',
+        headerLeft:       <Icons name = { 'categories' } style = { styles.titleIcon } />,
+        headerTitleStyle: styles.headerTitleStyle,
+        headerStyle:      styles.headerStyle,
+    };
 
     render () {
         const { navigate } = this.props.navigation;
@@ -22,12 +21,12 @@ export default class Categories extends Component {
         console.log(` -> "Categories" <- `);
 
         return (
-            <Container >
-                <View style = { styles.container }>
-
-                <Text>Categories</Text>
+            <Container style = { styles.mainContainer }>
+                <View style = { styles.mainView }>
+                    <Text>Categories</Text>
                 </View>
                 <AppFooter
+                    activePage = { 'categories' }
                     navigate = { navigate }
                 />
 
@@ -35,12 +34,3 @@ export default class Categories extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex:            1,
-        justifyContent:  'center',
-        alignItems:      'center',
-        backgroundColor: '#F5FCFF',
-    },
-});

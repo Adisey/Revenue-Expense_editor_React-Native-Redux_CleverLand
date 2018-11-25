@@ -1,9 +1,10 @@
 import { createStackNavigator } from 'react-navigation';
 
-import { CashFlow, Categories, Charts} from '../Pages';
+import { CashFlow, Categories, Charts, Tools } from '../Pages';
 
-export default App = createStackNavigator ({
-    CashFlow: { screen: CashFlow },
+export default App = createStackNavigator({
+    CashFlow:   { screen: CashFlow },
     Categories: { screen: Categories },
-    Charts: { screen: Charts },
+    Charts:     { screen: Charts },
+    Tools:      { screen: Tools },
 });
