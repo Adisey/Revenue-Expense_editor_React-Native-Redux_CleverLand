@@ -1,0 +1,1 @@
+export { fillCategories } from './fillCategories';
