@@ -1,9 +1,11 @@
 // Core
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { store } from '../init/store';
+// Components
 import { Text, View } from 'react-native';
 import { Container } from 'native-base';
-// Components
-import { AppFooter, Icons } from '../Components';
+import { AppFooter, Icons, CategoriesList } from '../Components';
 //Styles
 import styles from './styles';
 
@@ -21,16 +23,17 @@ export default class Categories extends Component {
         console.log(` -> "Categories" <- `);
 
         return (
-            <Container style = { styles.mainContainer }>
-                <View style = { styles.mainView }>
-                    <Text>Categories</Text>
-                </View>
-                <AppFooter
-                    activePage = { 'categories' }
-                    navigate = { navigate }
-                />
-
-            </Container>
+            <Provider store = { store }>
+                <Container style = { styles.mainContainer }>
+                    <View style = { styles.mainView }>
+                        <CategoriesList />
+                    </View>
+                    <AppFooter
+                        activePage = { 'categories' }
+                        navigate = { navigate }
+                    />
+                </Container>
+            </Provider>
         );
     }
 }

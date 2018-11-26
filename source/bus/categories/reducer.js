@@ -6,38 +6,45 @@ import { type } from './types';
 const initalState = fromJS([
     {
         id:               '1',
-        categoriesName:   'Банковская операция',
-        typeTransactions: [-1, 1],
+        name:             'Банковская операция',
+        typeTransactions: [1, 2],
+        icon:             'ios-card',
     },
     {
         id:               '2',
-        categoriesName:   'Еда',
-        typeTransactions: [-1],
+        name:             'Еда',
+        typeTransactions: [2],
+        icon:             'ios-pizza',
     },
     {
         id:               '3',
-        categoriesName:   'Покупки',
-        typeTransactions: [-1],
+        name:             'Покупки',
+        typeTransactions: [2],
+        icon:             'ios-cart',
     },
     {
         id:               '4',
-        categoriesName:   'Транспорт',
-        typeTransactions: [-1],
+        name:             'Транспорт',
+        typeTransactions: [2],
+        icon:             'ios-bus',
     },
     {
         id:               '5',
-        categoriesName:   'Дом',
-        typeTransactions: [-1],
+        name:             'Дом',
+        typeTransactions: [2],
+        icon:             'ios-home',
     },
     {
         id:               '6',
-        categoriesName:   'Путешествия',
-        typeTransactions: [-1],
+        name:             'Путешествия',
+        typeTransactions: [2],
+        icon:             'md-jet',
     },
     {
         id:               '7',
-        categoriesName:   'Другое',
-        typeTransactions: [-1, 1],
+        name:             'Другое',
+        typeTransactions: [1, 2],
+        icon:             'ios-pricetag',
     }
 ]);
 

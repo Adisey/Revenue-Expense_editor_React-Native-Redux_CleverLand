@@ -12,17 +12,10 @@ const styles = {
         marginHorizontal: 10,
     },
     mainContainer: {
-        // backgroundColor: '#0000FF',
-        flex:           1,
-        justifyContent: 'center',
-        alignItems:     'center',
-
+        flex: 1,
     },
     mainView: {
-        // backgroundColor: '#FFFF00',
-        flex:           1,
-        justifyContent: 'center',
-        alignItems:     'center',
+        flex: 1,
     },
 };
 

@@ -12,7 +12,7 @@ export default class Icons extends Component {
 
     static defaultProps = {
         style: defaultStyle,
-        name:  'ios-alert',
+        name:  'ios-help',
     };
 
     render () {
